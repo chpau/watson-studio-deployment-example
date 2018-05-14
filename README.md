@@ -18,3 +18,7 @@ Login and deploy the application
 cf login --sso
 cf push
 ```
+=======
+## Install the cloud tools
+https://console.bluemix.net/docs/cli/index.html#overview
+
