@@ -1,0 +1,5 @@
+urllib3
+Flask
+requests
+jinja2
+watson_machine_learning_client
