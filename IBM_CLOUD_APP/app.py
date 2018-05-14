@@ -21,11 +21,11 @@ def process_form_data():
 	# The following lines are exactly the python code example form the Watson Machine Learning page
 	#
 	wml_credentials = {
-	  "url": "https://ibm-watson-ml.mybluemix.net",
-	  "access_key": "XXXXXXXXXXX",
-	  "username": "XXXXXXXXXXX",
-	  "password": "XXXXXXXXXXX",
-	  "instance_id": "XXXXXXXXXXX"
+	"url": "https://ibm-watson-ml.mybluemix.net",
+	"access_key": "JTWUrvdQe...XWeZv",
+	"username": "9fb...3b4c",
+	"password": "352...bc66f",
+	"instance_id": "3423a...8a5f"
 	}
 
 	scoring_endpoint = "https://ibm-watson-ml.mybluemix.net/v3/wml_instances/3423aa28-09e1-4287-985a-1e77f6018a5f/published_models/158537aa-fc60-488e-a2c5-36cea66cbfb3/deployments/1fde8fcc-7321-4d04-8e22-f6ebe313140d/online"
