@@ -3,9 +3,20 @@
 
 ## 1 - Create a Model in Watson Studio and Deploy
 
-Notebook contains example of a deployment, using Madrid Housing Data.
+Create a New Project - Make sure to add a Machine Learning service in the Project Settings.
+
+![im](images/wml.png)
+
+Notebook contains example of a deployment, using Madrid Housing Data. Inside the notebook you need to copy/paste your Machine Learning Service credentials. Go to the Machine Learning Service from  https://console.bluemix.net/ 
+to find your credentials.
+
+![im](images/credentials.png)
 
 ## 2 - Create a Flask Webapp which uses the online model to score on data points
+
+Using the Implementation code snippet, and a little python (Flask) code, we can create a small working example.
+
+![im](images/implementation.png)
 
 `IBM_CLOUD_APP` contains a Flask webapp. To run locally;
 
@@ -13,6 +24,10 @@ Install the requirements
 ```
 pip3 install -r requirements.txt
 ```
+
+Edit `app.py` and
+1. Make sure the credentials are the exact same from step **1**
+2. Check the `scoring_endpoint` to match the URL like in the Code Snippit.
 
 Run the webapp
 ```

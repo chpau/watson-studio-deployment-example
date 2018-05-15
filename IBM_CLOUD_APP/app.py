@@ -22,13 +22,13 @@ def process_form_data():
 	#
 	wml_credentials = {
 	"url": "https://ibm-watson-ml.mybluemix.net",
-	"access_key": "JTWUrvdQe...XWeZv",
-	"username": "9fb...3b4c",
-	"password": "352...bc66f",
-	"instance_id": "3423a...8a5f"
+	"access_key": "JTWUrvdQerqXu3Y/Fcf0wBoxs1eoUpp3ivXynFqbNIBZN3amVmF80kroVV8Cpce9HxGxQ3pIogjgEOjN0TGDTcL0h32gVzPkwMbmHXNpi+FQYUqQmv73SQJrb1WXWeZv",
+	"username": "9fb26c5d-919f-491b-a47e-172479d63b4c",
+	"password": "3527ddba-55ef-4039-a039-b8135aabc66f",
+	"instance_id": "3423aa28-09e1-4287-985a-1e77f6018a5f"
 	}
 
-	scoring_endpoint = "https://ibm-watson-ml.mybluemix.net/v3/wml_instances/3423aa28-09e1-4287-985a-1e77f6018a5f/published_models/158537aa-fc60-488e-a2c5-36cea66cbfb3/deployments/1fde8fcc-7321-4d04-8e22-f6ebe313140d/online"
+	scoring_endpoint = 'https://ibm-watson-ml.mybluemix.net/v3/wml_instances/3423aa28-09e1-4287-985a-1e77f6018a5f/published_models/2f8a4dc2-8b30-4e9c-9973-bdc11c996227/deployments/1057bdc0-9915-4dd5-bcaf-f489135cb449/online'
 
 	headers = urllib3.util.make_headers(basic_auth='{username}:{password}'.format(username=wml_credentials['username'], password=wml_credentials['password']))
 	url = '{}/v3/identity/token'.format(wml_credentials['url'])
@@ -44,7 +44,7 @@ def process_form_data():
 	#
 	payload_scoring = {"values": [[result["mts2"], result["rooms"], result["distance_to_centre"], result["sauna"]]]}
 
-	response_scoring = requests.post('https://ibm-watson-ml.mybluemix.net/v3/wml_instances/3423aa28-09e1-4287-985a-1e77f6018a5f/published_models/158537aa-fc60-488e-a2c5-36cea66cbfb3/deployments/1fde8fcc-7321-4d04-8e22-f6ebe313140d/online', json=payload_scoring, headers=header)
+	response_scoring = requests.post(scoring_endpoint, json=payload_scoring, headers=header)
 	
 	# The result is send back as JSON. 
 	#
