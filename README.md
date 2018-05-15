@@ -1,6 +1,5 @@
 # Minimalistic example for how to deploy a model and create a Flask webapp
 
-
 ## 1 - Create a Model in Watson Studio and Deploy
 
 Create a New Project - Make sure to add a Machine Learning service in the Project Settings.
@@ -38,12 +37,24 @@ The website should run on port 5000.
 
 ## 3 (Optional) - Deploy the Flask Webapp in the IBM Cloud
 
-- Install 
+### Install IBM CLoud CLI
+
+I did the following inside a Ubuntu docker - but it has install options for the most common OS. 
+
 https://docs.cloudfoundry.org/cf-cli/install-go-cli.html
 (Use a Package Manager)
 
-Endpoint:
-https://api.ng.bluemix.net
+### Edit the manifest.yml to point it to a different hostname
+
+I have claimed `watsonstudiodeployment`, so you have to change it to something else
+```
+  name: watsonstudiodeployment
+  host: watsonstudiodeployment
+```
+
+### Deploy on the IBM Cloud
+
+Endpoint: `https://api.ng.bluemix.net`
 
 Login and deploy the application
 
@@ -51,3 +62,32 @@ Login and deploy the application
 cf login --sso
 cf push
 ```
+
+After some waiting you should see
+
+```
+App started
+
+
+OK
+
+App watsonstudiodeployment was started using this command `python app.py`
+
+Showing health and status for app watsonstudiodeployment in org willem.hendriks@nl.ibm.com / space dev as willem.hendriks@nl.ibm.com...
+OK
+
+requested state: started
+instances: 1/1
+usage: 512M x 1 instances
+urls: watsonstudiodeployment.mybluemix.net
+last uploaded: Tue May 15 09:06:00 UTC 2018
+stack: cflinuxfs2
+buildpack: python_buildpack
+
+     state     since                    cpu    memory        disk           details
+#0   running   2018-05-15 09:07:57 AM   4.0%   19M of 512M   307M of 512M
+root@5ee889adcd68:/wml/IBM_CLOUD_APP# 
+
+```
+
+See a example running on http://watsonstudiodeployment.mybluemix.net/
