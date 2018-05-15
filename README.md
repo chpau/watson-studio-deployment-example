@@ -13,7 +13,7 @@ to find your credentials.
 
 ## 2 - Create a Flask Webapp which uses the online model to score on data points
 
-Using the Implementation code snippet, and a little python (Flask) code, we can create a small working example.
+Using the Implementation code snippet, and a little python (Flask) code, we can create a small working example. The Flask framework is considered lightweight and easy to learn. http://flask.pocoo.org/
 
 ![im](images/implementation.png)
 
