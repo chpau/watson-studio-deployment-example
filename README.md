@@ -1,9 +1,27 @@
 # Minimalistic example for how to deploy a model and create a Flask webapp
 
-- Notebook contains example of a deployment.
-- `IBM_CLOUD_APP` contains a cloud foundery app which can be deployed in the IBM Cloud
 
-## Deploy a flask app on the IBM Cloud (TAFKAB)
+## 1 - Create a Model in Watson Studio and Deploy
+
+Notebook contains example of a deployment, using Madrid Housing Data.
+
+## 2 - Create a Flask Webapp which uses the online model to score on data points
+
+`IBM_CLOUD_APP` contains a Flask webapp. To run locally;
+
+Install the requirements
+```
+pip3 install -r requirements.txt
+```
+
+Run the webapp
+```
+python3 app.py
+```
+
+The website should run on port 5000.
+
+## 3 (Optional) - Deploy the Flask Webapp in the IBM Cloud
 
 - Install 
 https://docs.cloudfoundry.org/cf-cli/install-go-cli.html
